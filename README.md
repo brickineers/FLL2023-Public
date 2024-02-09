@@ -6,3 +6,5 @@ Code from line 289 - 1125 excluding line 983 is from https://github.com/GO-Robot
 Our documentation: http://tinyurl.com/brickineersdocs
 
 Our presentations (for Worlds): http://tinyurl.com/brickineerspresentations
+
+Our YouTube channel: https://www.youtube.com/@Brickineers-52060
