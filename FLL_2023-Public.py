@@ -12,7 +12,7 @@ from hub import battery
 from math import *
 import math
 import random
-# from math import *
+import math
 
 phub = PrimeHub()
 Robot = 2
@@ -40,7 +40,7 @@ RUNNING = 0
 motorC_Val = motorC.set_degrees_counted(0)
 motorD_Val = motorD.set_degrees_counted(0)
 
-#Robot specs
+#Robot info
 circumference = 17.6  
 sensordistance = 7 
 
@@ -165,6 +165,7 @@ def drive_till_color(port, speed, color):
         pass
     wheels.stop()
 #Gets speed and pivot for turning
+
 def get_motor_speeds_for_turn(pivot_point, side, speed):
     # Turn slower for CENTER pivot to reduce error
     if pivot_point == CENTER:
@@ -258,7 +259,7 @@ def gyro_turn_for_coordinate(target_angle, pivot_point, side, speed = DEFAULT_TU
 
     current_orientation = target_angle
 
-#Calcualtes anlge for coordinate system
+#Calculates angle for coordinate system
 def calculate_angle(x1, y1, x2, y2):
     # Calculate the difference between the two points
     dx = x2 - x1
@@ -272,7 +273,7 @@ def calculate_angle(x1, y1, x2, y2):
 
     return theta_degrees
 
-#Moves to the Coordinate Specifies
+#Moves to the Coordinate Specified
 def move_to_coordinate(X, Y):
     global positionx, positiony, angle
     angle = calculate_angle(positionx, positiony, X, Y)
@@ -1325,10 +1326,12 @@ def update_config():
     phub.light_matrix.write(run_names[CONFIG])
 
 # Called on RIGHT button pressed
+# Moves to next run
 async def on_right_button(vm, stack):
     update_config()
 
 # Called on LEFT button pressed
+# Runs the run displayed, after run, moves to next run and waits for button press
 async def on_left_button(vm, stack):
     global RUNNING
     if not RUNNING:
@@ -1341,7 +1344,7 @@ async def on_left_button(vm, stack):
         update_config()
     show_battery_level()
 
-# Main Program
+# Main Setup
 async def on_start(vm, stack):
     phub.light_matrix.write(str(CONFIG))
     show_battery_level()
