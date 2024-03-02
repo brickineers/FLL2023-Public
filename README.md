@@ -12,7 +12,6 @@ Blocks to Python Translation (SPIKE 2):
 https://github.com/azzieg/mindstorms-inventor/tree/main/word_blocks
 
 VSCode SPIKE Extension (Allows connection to SPIKE Hub from VSCode):
-
 https://github.com/PeterStaev/lego-spikeprime-mindstorms-vscode/tree/master
 
 MicroPython Docs (SPIKE Uses MPY instead of PY becasue of weaker processor):
